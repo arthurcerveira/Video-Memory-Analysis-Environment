@@ -112,9 +112,9 @@ inline Int64 abs (Int64 x) { return _abs64(x); };
 // ====================================================================================================================
 
 #define INTRA_INTER_MEM_EVAL_EN 0
-#define MEM_TRACE_EN 0
+#define MEM_TRACE_EN 1
 #define APPROX_EN 0
-#define DEC_MEM_TRACE_EN 1
+#define DEC_MEM_TRACE_EN 0
 
 // ====================================================================================================================
 // Common constants

@@ -7,12 +7,12 @@ from data_reader import TraceReader, VtuneReader
 from data_formatter import generate_trace_graph, generate_vtune_graph, generate_block_graph
 
 # Routines
-AUTOMATE_TRACE = False
+AUTOMATE_TRACE = True
 GENERATE_TRACE_GRAPH = False
 GENERATE_BLOCK_GRAPH = False
 
-AUTOMATE_VTUNE = True
-GENERATE_VTUNE_GRAPH = True
+AUTOMATE_VTUNE = False
+GENERATE_VTUNE_GRAPH = False
 
 # Trace Reader
 TRACE_INPUT = "mem_trace.txt"
@@ -133,7 +133,8 @@ class AutomateTraceReader(object):
 
     @staticmethod
     def generate_trace(cmd, video_path, video_cfg, cfg_path, sr):
-        cmd_array = generate_cmd_array(cmd, video_path, video_cfg, cfg_path, sr)
+        cmd_array = generate_cmd_array(
+            cmd, video_path, video_cfg, cfg_path, sr)
         subprocess.run(cmd_array)
 
     @staticmethod
@@ -149,7 +150,8 @@ class AutomateTraceReader(object):
 
             for cfg, cfg_path in CONFIG[encoder].items():
                 for sr in SEARCH_RANGE:
-                    self.generate_trace(cmd, video_path, video_info["video_cfg"], cfg_path, sr)
+                    self.generate_trace(
+                        cmd, video_path, video_info["video_cfg"], cfg_path, sr)
 
                     self.process_trace(video_info["title"], cfg)
                     append_output_file(TRACE_OUTPUT, AUTOMATE_TRACE_OUTPUT)
@@ -185,12 +187,14 @@ class AutomateVtuneReader:
         subprocess.call(["bash", VTUNE_SCRIPT])
 
     def process_report(self, title, width, height, encoder, encoder_cfg, sr):
-        self.data_reader.set_info(title, width, height, encoder, encoder_cfg, sr)
+        self.data_reader.set_info(
+            title, width, height, encoder, encoder_cfg, sr)
         self.data_reader.read_data()
         self.data_reader.save_data()
 
     def log_invalid_functions(self):
-        self.invalid_functions = self.invalid_functions.union(self.data_reader.function_log)
+        self.invalid_functions = self.invalid_functions.union(
+            self.data_reader.function_log)
         with open("undefined_functions.py", 'w') as log:
             log.write("functions = " + pprint.pformat(self.invalid_functions))
 
@@ -211,12 +215,14 @@ class AutomateVtuneReader:
 
             for cfg, cfg_path in CONFIG[encoder].items():
                 for sr in SEARCH_RANGE:
-                    self.generate_vtune_script(cmd, video_path, video_info["video_cfg"], cfg_path, sr)
+                    self.generate_vtune_script(
+                        cmd, video_path, video_info["video_cfg"], cfg_path, sr)
                     self.run_vtune_script()
 
                     self.process_report(video_info["title"], video_info["width"],
                                         video_info["height"], encoder, cfg, sr)
-                    append_output_file(VTUNE_REPORT_OUTPUT, AUTOMATE_VTUNE_OUTPUT)
+                    append_output_file(VTUNE_REPORT_OUTPUT,
+                                       AUTOMATE_VTUNE_OUTPUT)
                     self.log_invalid_functions()
 
                     self.clean()
@@ -228,6 +234,9 @@ def main():
 
     if AUTOMATE_VTUNE is True:
         automate_vtune()
+
+    while True:
+        continue
 
 
 def automate_trace():
