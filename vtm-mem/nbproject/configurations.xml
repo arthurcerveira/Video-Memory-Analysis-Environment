@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="source/App" name="0">
+    </df>
+    <df root="source/Lib" name="1">
+      <df name="CommonLib">
+        <df name="x86">
+          <df name="avx">
+            <in>AdaptiveLoopFilter_avx.cpp</in>
+            <in>AffineGradientSearch_avx.cpp</in>
+            <in>Buffer_avx.cpp</in>
+            <in>InterpolationFilter_avx.cpp</in>
+            <in>RdCost_avx.cpp</in>
+          </df>
+          <df name="avx2">
+            <in>AdaptiveLoopFilter_avx2.cpp</in>
+            <in>AffineGradientSearch_avx2.cpp</in>
+            <in>Buffer_avx2.cpp</in>
+            <in>InterpolationFilter_avx2.cpp</in>
+            <in>RdCost_avx2.cpp</in>
+          </df>
+          <df name="sse41">
+            <in>AdaptiveLoopFilter_sse41.cpp</in>
+            <in>AffineGradientSearch_sse41.cpp</in>
+            <in>Buffer_sse41.cpp</in>
+            <in>InterpolationFilter_sse41.cpp</in>
+            <in>RdCost_sse41.cpp</in>
+          </df>
+          <df name="sse42">
+            <in>IbcHashmap_sse42.cpp</in>
+          </df>
+          <in>AdaptiveLoopFilterX86.h</in>
+          <in>AffineGradientSearchX86.h</in>
+          <in>BufferX86.h</in>
+          <in>CommonDefX86.cpp</in>
+          <in>CommonDefX86.h</in>
+          <in>IbcHashMapX86.h</in>
+          <in>InitX86.cpp</in>
+          <in>InterpolationFilterX86.h</in>
+          <in>RdCostX86.h</in>
+        </df>
+        <in>AdaptiveLoopFilter.cpp</in>
+        <in>AdaptiveLoopFilter.h</in>
+        <in>AffineGradientSearch.cpp</in>
+        <in>AffineGradientSearch.h</in>
+        <in>BitStream.cpp</in>
+        <in>BitStream.h</in>
+        <in>Buffer.cpp</in>
+        <in>Buffer.h</in>
+        <in>CacheModel.cpp</in>
+        <in>CacheModel.h</in>
+        <in>ChromaFormat.cpp</in>
+        <in>ChromaFormat.h</in>
+        <in>CodingStatistics.h</in>
+        <in>CodingStructure.cpp</in>
+        <in>CodingStructure.h</in>
+        <in>Common.h</in>
+        <in>CommonDef.h</in>
+        <in>ContextModelling.cpp</in>
+        <in>ContextModelling.h</in>
+        <in>Contexts.cpp</in>
+        <in>Contexts.h</in>
+        <in>CrossCompPrediction.cpp</in>
+        <in>CrossCompPrediction.h</in>
+        <in>DepQuant.cpp</in>
+        <in>DepQuant.h</in>
+        <in>HRD.cpp</in>
+        <in>HRD.h</in>
+        <in>Hash.cpp</in>
+        <in>Hash.h</in>
+        <in>IbcHashMap.cpp</in>
+        <in>IbcHashMap.h</in>
+        <in>InterPrediction.cpp</in>
+        <in>InterPrediction.h</in>
+        <in>InterpolationFilter.cpp</in>
+        <in>InterpolationFilter.h</in>
+        <in>IntraPrediction.cpp</in>
+        <in>IntraPrediction.h</in>
+        <in>LoopFilter.cpp</in>
+        <in>LoopFilter.h</in>
+        <in>MCTS.cpp</in>
+        <in>MCTS.h</in>
+        <in>MatrixIntraPrediction.cpp</in>
+        <in>MatrixIntraPrediction.h</in>
+        <in>MipData.h</in>
+        <in>MotionInfo.h</in>
+        <in>Mv.cpp</in>
+        <in>Mv.h</in>
+        <in>NAL.h</in>
+        <in>PicYuvMD5.cpp</in>
+        <in>Picture.cpp</in>
+        <in>Picture.h</in>
+        <in>Quant.cpp</in>
+        <in>Quant.h</in>
+        <in>QuantRDOQ.cpp</in>
+        <in>QuantRDOQ.h</in>
+        <in>RdCost.cpp</in>
+        <in>RdCost.h</in>
+        <in>RdCostWeightPrediction.cpp</in>
+        <in>RdCostWeightPrediction.h</in>
+        <in>Reshape.cpp</in>
+        <in>Reshape.h</in>
+        <in>Rom.cpp</in>
+        <in>Rom.h</in>
+        <in>RomLFNST.cpp</in>
+        <in>RomTr.cpp</in>
+        <in>SEI.cpp</in>
+        <in>SEI.h</in>
+        <in>SampleAdaptiveOffset.cpp</in>
+        <in>SampleAdaptiveOffset.h</in>
+        <in>Slice.cpp</in>
+        <in>Slice.h</in>
+        <in>TrQuant.cpp</in>
+        <in>TrQuant.h</in>
+        <in>TrQuant_EMT.cpp</in>
+        <in>TrQuant_EMT.h</in>
+        <in>TypeDef.h</in>
+        <in>Unit.cpp</in>
+        <in>Unit.h</in>
+        <in>UnitPartitioner.cpp</in>
+        <in>UnitPartitioner.h</in>
+        <in>UnitTools.cpp</in>
+        <in>UnitTools.h</in>
+        <in>WeightPrediction.cpp</in>
+        <in>WeightPrediction.h</in>
+        <in>dtrace.cpp</in>
+        <in>dtrace.h</in>
+        <in>dtrace_blockstatistics.cpp</in>
+        <in>dtrace_blockstatistics.h</in>
+        <in>dtrace_buffer.h</in>
+        <in>dtrace_codingstruct.h</in>
+        <in>dtrace_next.h</in>
+        <in>version.h</in>
+      </df>
+      <df name="DecoderLib">
+        <in>AnnexBread.cpp</in>
+        <in>AnnexBread.h</in>
+        <in>BinDecoder.cpp</in>
+        <in>BinDecoder.h</in>
+        <in>CABACReader.cpp</in>
+        <in>CABACReader.h</in>
+        <in>DecCu.cpp</in>
+        <in>DecCu.h</in>
+        <in>DecLib.cpp</in>
+        <in>DecLib.h</in>
+        <in>DecSlice.cpp</in>
+        <in>DecSlice.h</in>
+        <in>NALread.cpp</in>
+        <in>NALread.h</in>
+        <in>SEIread.cpp</in>
+        <in>SEIread.h</in>
+        <in>VLCReader.cpp</in>
+        <in>VLCReader.h</in>
+      </df>
+      <df name="EncoderLib">
+        <in>AQp.cpp</in>
+        <in>AQp.h</in>
+        <in>Analyze.h</in>
+        <in>AnnexBwrite.h</in>
+        <in>BinEncoder.cpp</in>
+        <in>BinEncoder.h</in>
+        <in>CABACWriter.cpp</in>
+        <in>CABACWriter.h</in>
+        <in>EncAdaptiveLoopFilter.cpp</in>
+        <in>EncAdaptiveLoopFilter.h</in>
+        <in>EncCfg.h</in>
+        <in>EncCu.cpp</in>
+        <in>EncCu.h</in>
+        <in>EncGOP.cpp</in>
+        <in>EncGOP.h</in>
+        <in>EncHRD.cpp</in>
+        <in>EncHRD.h</in>
+        <in>EncLib.cpp</in>
+        <in>EncLib.h</in>
+        <in>EncModeCtrl.cpp</in>
+        <in>EncModeCtrl.h</in>
+        <in>EncReshape.cpp</in>
+        <in>EncReshape.h</in>
+        <in>EncSampleAdaptiveOffset.cpp</in>
+        <in>EncSampleAdaptiveOffset.h</in>
+        <in>EncSlice.cpp</in>
+        <in>EncSlice.h</in>
+        <in>InterSearch.cpp</in>
+        <in>InterSearch.h</in>
+        <in>IntraSearch.cpp</in>
+        <in>IntraSearch.h</in>
+        <in>NALwrite.cpp</in>
+        <in>NALwrite.h</in>
+        <in>RateCtrl.cpp</in>
+        <in>RateCtrl.h</in>
+        <in>SEIEncoder.cpp</in>
+        <in>SEIEncoder.h</in>
+        <in>SEIwrite.cpp</in>
+        <in>SEIwrite.h</in>
+        <in>VLCWriter.cpp</in>
+        <in>VLCWriter.h</in>
+        <in>WeightPredAnalysis.cpp</in>
+        <in>WeightPredAnalysis.h</in>
+      </df>
+      <df name="libmd5">
+        <in>MD5.h</in>
+        <in>libmd5.cpp</in>
+        <in>libmd5.h</in>
+      </df>
+      <df name="Utilities">
+        <in>ColourRemapping.cpp</in>
+        <in>ColourRemapping.h</in>
+        <in>VideoIOYuv.cpp</in>
+        <in>VideoIOYuv.h</in>
+        <in>program_options_lite.cpp</in>
+        <in>program_options_lite.h</in>
+      </df>
+    </df>
+    <logicalFolder name="Modules"
+                   displayName="Modules"
+                   projectFiles="true"
+                   root="/usr/share/cmake-3.10/Modules">
+      <itemPath>/usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c</itemPath>
+      <itemPath>/usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp</itemPath>
+      <itemPath>/usr/share/cmake-3.10/Modules/CMakeCompilerABI.h</itemPath>
+      <itemPath>/usr/share/cmake-3.10/Modules/CheckForPthreads.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+      <itemPath>nbproject/private/launcher.properties</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>source/App</Elem>
+    <Elem>source/Lib</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <flagsDictionary>
+        <element flagsID="0" commonFlags="-fPIE"/>
+      </flagsDictionary>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
+      </makefileType>
+      <item path="/usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="/usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/usr/share/cmake-3.10/Modules/CheckForPthreads.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+        <cTool flags="0">
+        </cTool>
+      </item>
+      <folder path="Modules">
+        <cTool>
+          <incDir>
+            <pElem>build/umake/gcc-7.3/x86_64/debug/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>build/umake/gcc-7.3/x86_64/debug/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <item path="source/Lib/CommonLib/AdaptiveLoopFilter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/AdaptiveLoopFilter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/AffineGradientSearch.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/AffineGradientSearch.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/BitStream.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/BitStream.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Buffer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Buffer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/CacheModel.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/CacheModel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/ChromaFormat.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/ChromaFormat.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/CodingStatistics.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/CodingStructure.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/CodingStructure.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Common.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/CommonDef.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/ContextModelling.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/ContextModelling.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Contexts.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Contexts.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/CrossCompPrediction.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/CrossCompPrediction.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/DepQuant.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/DepQuant.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/HRD.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/HRD.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Hash.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Hash.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/IbcHashMap.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/IbcHashMap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/InterPrediction.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/InterPrediction.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/InterpolationFilter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/InterpolationFilter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/IntraPrediction.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/IntraPrediction.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/LoopFilter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/LoopFilter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/MCTS.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/MCTS.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/MatrixIntraPrediction.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/MatrixIntraPrediction.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/MipData.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/MotionInfo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Mv.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Mv.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/NAL.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/PicYuvMD5.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Picture.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Picture.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Quant.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Quant.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/QuantRDOQ.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/QuantRDOQ.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/RdCost.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/RdCost.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/RdCostWeightPrediction.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/RdCostWeightPrediction.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Reshape.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Reshape.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Rom.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Rom.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/RomLFNST.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/RomTr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/SEI.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/SEI.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/SampleAdaptiveOffset.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/SampleAdaptiveOffset.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Slice.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Slice.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/TrQuant.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/TrQuant.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/TrQuant_EMT.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/TrQuant_EMT.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/TypeDef.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Unit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/Unit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/UnitPartitioner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/UnitPartitioner.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/UnitTools.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/UnitTools.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/WeightPrediction.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/WeightPrediction.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/dtrace.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/dtrace.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/dtrace_blockstatistics.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/dtrace_blockstatistics.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/dtrace_buffer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/dtrace_codingstruct.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/dtrace_next.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/version.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/AdaptiveLoopFilterX86.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/AffineGradientSearchX86.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/BufferX86.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/CommonDefX86.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/CommonDefX86.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/IbcHashMapX86.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/InitX86.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/InterpolationFilterX86.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/RdCostX86.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/avx/AdaptiveLoopFilter_avx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/avx/AffineGradientSearch_avx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/avx/Buffer_avx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/avx/InterpolationFilter_avx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/avx/RdCost_avx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/avx2/AdaptiveLoopFilter_avx2.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/avx2/AffineGradientSearch_avx2.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/avx2/Buffer_avx2.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/avx2/InterpolationFilter_avx2.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/avx2/RdCost_avx2.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/sse41/AdaptiveLoopFilter_sse41.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/sse41/AffineGradientSearch_sse41.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/sse41/Buffer_sse41.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/sse41/InterpolationFilter_sse41.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/sse41/RdCost_sse41.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/CommonLib/x86/sse42/IbcHashmap_sse42.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/DecoderLib/AnnexBread.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/DecoderLib/AnnexBread.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/DecoderLib/BinDecoder.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/DecoderLib/BinDecoder.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/DecoderLib/CABACReader.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/DecoderLib/CABACReader.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/DecoderLib/DecCu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/DecoderLib/DecCu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/DecoderLib/DecLib.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/DecoderLib/DecLib.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/DecoderLib/DecSlice.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/DecoderLib/DecSlice.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/DecoderLib/NALread.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/DecoderLib/NALread.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/DecoderLib/SEIread.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/DecoderLib/SEIread.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/DecoderLib/VLCReader.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/DecoderLib/VLCReader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/AQp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/AQp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/Analyze.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/AnnexBwrite.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/BinEncoder.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/BinEncoder.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/CABACWriter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/CABACWriter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/EncAdaptiveLoopFilter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/EncAdaptiveLoopFilter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/EncCfg.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/EncCu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/EncCu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/EncGOP.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/EncGOP.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/EncHRD.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/EncHRD.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/EncLib.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/EncLib.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/EncModeCtrl.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/EncModeCtrl.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/EncReshape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/EncReshape.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/EncSampleAdaptiveOffset.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/EncSampleAdaptiveOffset.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/EncSlice.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/EncSlice.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/InterSearch.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/InterSearch.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/IntraSearch.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/IntraSearch.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/NALwrite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/NALwrite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/RateCtrl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/RateCtrl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/SEIEncoder.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/SEIEncoder.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/SEIwrite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/SEIwrite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/VLCWriter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/VLCWriter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/WeightPredAnalysis.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/EncoderLib/WeightPredAnalysis.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/Utilities/ColourRemapping.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/Utilities/ColourRemapping.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/Utilities/VideoIOYuv.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/Utilities/VideoIOYuv.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/Utilities/program_options_lite.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/Utilities/program_options_lite.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="source/Lib/libmd5/MD5.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="source/Lib/libmd5/libmd5.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/Lib/libmd5/libmd5.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
