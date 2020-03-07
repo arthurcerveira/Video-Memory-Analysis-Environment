@@ -1,3 +1,4 @@
+// Arthur
 #ifndef MEMORYTRACER_H
 #define	MEMORYTRACER_H
 
@@ -42,4 +43,3 @@ public:
 };
 
 #endif	/* MEMORYTRACER_H */
-

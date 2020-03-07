@@ -1,3 +1,4 @@
+// Arthur
 #include "MemoryTracer.h"
 
 
@@ -15,7 +16,7 @@ void MemoryTracer::init(std::string fileName, unsigned int wFrame, unsigned int 
 	std::string outStr = "";
 	
 	std::stringstream ss;
-	ss << "VVC" << " ";
+    ss << "VVC" << " ";
 	ss << videoSequence << " ";
 	ss << wFrame << " ";
 	ss << hFrame << " ";
@@ -23,7 +24,6 @@ void MemoryTracer::init(std::string fileName, unsigned int wFrame, unsigned int 
 	
 	outStr += ss.str();
 	fp << outStr;
-
 }
 
 void MemoryTracer::finalize() {
@@ -62,7 +62,7 @@ void MemoryTracer::initCU(int xCU, int yCU, int depthCU, int widthCU, int height
 	std::stringstream ss;
 	ss << xCU << " ";
 	ss << yCU << " ";
-	ss << widthCU << " ";
+    ss << widthCU << " ";
 	ss << heightCU << " ";
 	ss << depthCU << std::endl;
 	
@@ -111,7 +111,7 @@ void MemoryTracer::insertRasterSearch(int xLeft, int xRight, int yTop, int yBott
 	ss << xRight << " ";
 	ss << yTop << " ";
 	ss << yBottom << " ";
-	ss << rasterStep << std::endl;
+    ss << rasterStep << std::endl;
 	
 	outStr += ss.str();
 	fp << outStr;

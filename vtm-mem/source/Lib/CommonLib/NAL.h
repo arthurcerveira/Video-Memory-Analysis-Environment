@@ -3,7 +3,7 @@
  * and contributor rights, including patent rights, and no such rights are
  * granted under this license.
  *
- * Copyright (c) 2010-2019, ITU/ISO/IEC
+ * Copyright (c) 2010-2020, ITU/ISO/IEC
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -50,20 +50,32 @@ struct NALUnit
   NalUnitType m_nalUnitType; ///< nal_unit_type
   uint32_t        m_temporalId;  ///< temporal_id
   uint32_t        m_nuhLayerId;  ///< nuh_layer_id
+  uint32_t        m_forbiddenZeroBit;
+  uint32_t        m_nuhReservedZeroBit;
 
   NALUnit(const NALUnit &src)
   :m_nalUnitType (src.m_nalUnitType)
   ,m_temporalId  (src.m_temporalId)
   ,m_nuhLayerId  (src.m_nuhLayerId)
+  , m_forbiddenZeroBit(src.m_forbiddenZeroBit)
+  , m_nuhReservedZeroBit(src.m_nuhReservedZeroBit)
   { }
   /** construct an NALunit structure with given header values. */
   NALUnit(
     NalUnitType nalUnitType,
     int         temporalId = 0,
+    uint32_t nuhReservedZeroBit = 0,
+    uint32_t forbiddenZeroBit = 0,
     int         nuhLayerId = 0)
     :m_nalUnitType (nalUnitType)
     ,m_temporalId  (temporalId)
     ,m_nuhLayerId  (nuhLayerId)
+#if JVET_O0179_PROPOSALB
+    , m_forbiddenZeroBit(forbiddenZeroBit)
+    , m_nuhReservedZeroBit(nuhReservedZeroBit)
+#endif
+
+
   {}
 
   /** default constructor - no initialization; must be performed by user */
@@ -74,43 +86,14 @@ struct NALUnit
   /** returns true if the NALunit is a slice NALunit */
   bool isSlice()
   {
-#if JVET_N0067_NAL_Unit_Header
     return m_nalUnitType == NAL_UNIT_CODED_SLICE_TRAIL
         || m_nalUnitType == NAL_UNIT_CODED_SLICE_STSA
         || m_nalUnitType == NAL_UNIT_CODED_SLICE_IDR_W_RADL
         || m_nalUnitType == NAL_UNIT_CODED_SLICE_IDR_N_LP
         || m_nalUnitType == NAL_UNIT_CODED_SLICE_CRA
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_GRA
+        || m_nalUnitType == NAL_UNIT_CODED_SLICE_GDR
         || m_nalUnitType == NAL_UNIT_CODED_SLICE_RADL
         || m_nalUnitType == NAL_UNIT_CODED_SLICE_RASL;
-#else
-#if JVET_M0101_HLS
-    return m_nalUnitType == NAL_UNIT_CODED_SLICE_TRAIL
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_STSA
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_IDR_W_RADL
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_IDR_N_LP
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_CRA
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_RADL
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_RASL;
-#else
-    return m_nalUnitType == NAL_UNIT_CODED_SLICE_TRAIL_R
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_TRAIL_N
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_TSA_R
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_TSA_N
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_STSA_R
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_STSA_N
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_BLA_W_LP
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_BLA_W_RADL
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_BLA_N_LP
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_IDR_W_RADL
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_IDR_N_LP
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_CRA
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_RADL_N
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_RADL_R
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_RASL_N
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_RASL_R;
-#endif
-#endif
   }
   bool isSei()
   {
@@ -120,7 +103,6 @@ struct NALUnit
 
   bool isVcl()
   {
-#if JVET_N0067_NAL_Unit_Header
     return m_nalUnitType == NAL_UNIT_CODED_SLICE_TRAIL
         || m_nalUnitType == NAL_UNIT_CODED_SLICE_STSA
         || m_nalUnitType == NAL_UNIT_CODED_SLICE_RADL
@@ -128,11 +110,7 @@ struct NALUnit
         || m_nalUnitType == NAL_UNIT_CODED_SLICE_IDR_W_RADL
         || m_nalUnitType == NAL_UNIT_CODED_SLICE_IDR_N_LP
         || m_nalUnitType == NAL_UNIT_CODED_SLICE_CRA
-        || m_nalUnitType == NAL_UNIT_CODED_SLICE_GRA;
-
-#else
-    return ( (uint32_t)m_nalUnitType < 32 );
-#endif
+        || m_nalUnitType == NAL_UNIT_CODED_SLICE_GDR;
   }
 };
 
@@ -171,6 +149,7 @@ struct NALUnitEBSP : public NALUnit
 class AccessUnit : public std::list<NALUnitEBSP*> // NOTE: Should not inherit from STL.
 {
 public:
+  int temporalId;
   ~AccessUnit()
   {
     for (AccessUnit::iterator it = this->begin(); it != this->end(); it++)

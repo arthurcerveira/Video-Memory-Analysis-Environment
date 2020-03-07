@@ -3,7 +3,7 @@
  * and contributor rights, including patent rights, and no such rights are
  * granted under this license.
  *
- * Copyright (c) 2010-2019, ITU/ISO/IEC
+ * Copyright (c) 2010-2020, ITU/ISO/IEC
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -90,36 +90,20 @@ void MCTSHelper::clipMvToArea( Mv& rcMv, const Area& block, const Area& clipArea
 
 Area MCTSHelper::getTileArea( const CodingStructure* cs, const int ctuAddr )
 {
-#if JVET_N0857_TILES_BRICKS
-  const BrickMap* tileMap = cs->picture->brickMap;
-  const int       tileIdx = tileMap->getBrickIdxRsMap( ctuAddr );
-#else
-  const TileMap* tileMap = cs->picture->tileMap;
-  const int      tileIdx = tileMap->getTileIdxMap( ctuAddr );
-#endif
-#if JVET_N0857_TILES_BRICKS
-  const Brick&  currentTile = tileMap->bricks[tileIdx];
-#else
-  const Tile&    currentTile = tileMap->tiles[tileIdx];
-#endif
-
-  const int      frameWidthInCtus = cs->pcv->widthInCtus;
-  const int  firstCtuRsAddrOfTile = currentTile.getFirstCtuRsAddr();
-
-  const int tileXPosInCtus = firstCtuRsAddrOfTile % frameWidthInCtus;
-  const int tileYPosInCtus = firstCtuRsAddrOfTile / frameWidthInCtus;
-#if JVET_N0857_TILES_BRICKS
-  const int tileWidthtInCtus = currentTile.getWidthInCtus();
-  const int tileHeightInCtus = currentTile.getHeightInCtus();
-#else
-  const int tileWidthtInCtus = currentTile.getTileWidthInCtus();
-  const int tileHeightInCtus = currentTile.getTileHeightInCtus();
-#endif
-
+  const PPS *pps = cs->pps;
   const int  maxCUWidth  = cs->pcv->maxCUWidth;
   const int  maxCUHeight = cs->pcv->maxCUHeight;
 
-  const int tileLeftTopPelPosX = maxCUWidth  * tileXPosInCtus;
+  const uint32_t tileIdx = pps->getTileIdx( (uint32_t)ctuAddr );
+  const uint32_t tileX = tileIdx % pps->getNumTileColumns();
+  const uint32_t tileY = tileIdx / pps->getNumTileColumns();
+  
+  const int tileWidthtInCtus = pps->getTileColumnWidth( tileX );
+  const int tileHeightInCtus = pps->getTileRowHeight  ( tileY );  
+  const int tileXPosInCtus   = pps->getTileColumnBd( tileX );
+  const int tileYPosInCtus   = pps->getTileRowBd( tileY );
+
+  const int tileLeftTopPelPosX = maxCUWidth * tileXPosInCtus;
   const int tileLeftTopPelPosY = maxCUHeight * tileYPosInCtus;
   const int tileRightBottomPelPosX = std::min<int>( ( ( tileWidthtInCtus + tileXPosInCtus ) * maxCUWidth ), (int)cs->picture->lwidth() ) - 1;
   const int tileRightBottomPelPosY = std::min<int>( ( ( tileHeightInCtus + tileYPosInCtus ) * maxCUHeight ), (int)cs->picture->lheight() ) - 1;
