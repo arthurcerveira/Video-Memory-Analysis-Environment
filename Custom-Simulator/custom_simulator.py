@@ -65,7 +65,7 @@ VIDEO_SEQUENCES_PATH = "../video_sequences"
 
 # Parameters
 FRAMES = '17'
-SEARCH_RANGE = ['384']
+SEARCH_RANGE = ['96']
 
 
 # Auxiliary Functions
