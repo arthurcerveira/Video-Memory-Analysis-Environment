@@ -27,12 +27,10 @@ To build the container and start the analysis you need to run the following comm
 
 ```
 docker build -t mem-analysis .
-docker run -it --name running-mem mem-analysis
+docker run -d -v "$(pwd)"/Custom-Simulator:/usr/src/mem-analysis/Custom-Simulator --rm --name running-mem mem-analysis
 ```
 
-Once the execution is over you can get the results through [docker cp](https://docs.docker.com/engine/reference/commandline/cp/ "docker cp").
-
-The default output is `automate_trace_output.txt` in the `Custom-Simulator` directory.
+Once the execution is over the results will be available in the `Custom-Simulator` directory on the host machine.
 
 ## Settings
 
@@ -61,8 +59,6 @@ VTM = "../vtm-mem/"
 
 HEVC = True
 VVC = True
-
-ENCODER_CMD = dict()
 
 CONFIG = {"HEVC": {"Low Delay": HM + "cfg/encoder_lowdelay_main.cfg",
                    "Random Access": HM + "cfg/encoder_randomaccess_main.cfg"},
