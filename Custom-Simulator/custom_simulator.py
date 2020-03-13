@@ -235,9 +235,6 @@ def main():
     if AUTOMATE_VTUNE is True:
         automate_vtune()
 
-    while True:
-        continue
-
 
 def automate_trace():
     automate_reader = AutomateTraceReader()
