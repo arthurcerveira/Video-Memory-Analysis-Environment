@@ -1,0 +1,7 @@
+version: "3"
+services:
+  mem-analysis:
+    container_name: mem-analysis
+    build: .
+    volumes:
+      - ./Custom-Simulator:/usr/src/mem-analysis/Custom-Simulator
